@@ -1,0 +1,40 @@
+<%- include('./partials/head') %>
+
+<body>
+<%- include('./partials/navbar') %>
+<div class="container-fluid">
+<br>
+<div class="card-header bg-success">
+    <div>
+        <h2>Editar usuarios:</h2>
+    </div>
+</div>
+
+<br>
+    
+    <div class="card-body">
+        <form action="/admin/usuarios" method="post"></form>
+        <div>
+            <% usuarios.forEach(usuario => { %>
+                
+               <p><strong>Nome: </strong><%= usuario.nome %></p>  
+               <p><strong>Preco: </strong><%= usuario.email %></p>  
+               <p><strong>Estoque:</strong> <%= usuario.ano_nascimento %></p>
+
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <a href="#" class="btn btn-primary">Editar</a>
+                </div>
+                
+                <hr>
+             
+            <% }) %>
+         </div>
+        </div>
+   
+
+    </div>
+
+
+
+
+<%- include('./partials/footer') %> 

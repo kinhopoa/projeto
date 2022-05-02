@@ -1,0 +1,40 @@
+<%- include('./partials/head') %>
+
+<body>
+<%- include('./partials/navbar') %>
+<div class="container-fluid">
+<br>
+<div class="card-header bg-success">
+    <div>
+        <h2>Editar produtos:</h2>
+    </div>
+</div>
+
+<br>
+    
+    <div class="card-body">
+        
+        <div>
+            <% produtos.forEach(produto => { %>
+                
+               <p><strong>Nome: </strong><%= produto.nome %></p>  
+               <p><strong>Preco: </strong><%= produto.preco %></p>  
+               <p><strong>Estoque:</strong> <%= produto.estoque %></p>
+
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <a href="#" class="btn btn-primary">Editar</a>
+                </div>
+                
+                <hr>
+             
+            <% }) %>
+         </div>
+        </div>
+   
+
+    </div>
+
+
+
+
+<%- include('./partials/footer') %> 

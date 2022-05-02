@@ -1,0 +1,30 @@
+<%- include('./partials/head') %>
+
+<body>
+<%- include('./partials/navbar') %>
+<main class="container mt-4">
+    <div class="d-flex justify-content-between">
+        <h1>Lista de Usuários</h1>
+    <form action="/usuarios/search" class="d-flex justify-content-around align-items-center" method="get">
+        <input type="text" class="form-control" placeholder="Pesquise um usuario" name="key">
+        <button type="submit" class="ml-3 btn btn-success">Buscar</button>
+    </form>
+    </div>
+    
+   <table class="table">
+
+        <tbody>
+            <% usuarios.forEach(usuarios => { %>
+                <tr>
+                  <th><%= usuarios.nome %></th>
+                  <th><%= usuarios.email %></th>
+                  <th><%= usuarios.data_nascimento %></th>
+                  
+                </tr>
+            <% }); %>  
+            </tbody>
+   </table>
+       
+</main>
+
+<%- include('./partials/footer') %> 

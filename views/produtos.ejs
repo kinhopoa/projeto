@@ -1,0 +1,68 @@
+<%- include('./partials/head') %> 
+
+<body>
+<%- include('./partials/navbar') %> 
+<br>
+<div class="container">
+<div class="card-header bg-warning">
+    <h3>Canecas <i class="fa-solid fa-mug-hot"></i></h3>
+</div>
+<div class="card-body">
+    <div class="row">
+        <% for(let i = 0; i < 4; i++) { %> 
+        <div class="card" style="width: 13rem; margin: 30px;">
+          <img src="/images/undraw_code_thinking_re_gka2.svg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Canecas</h5>
+            <p class="card-text">Este será a página que redireciona para canecas
+            </p>
+            <a href="#" class="btn btn-primary">Ver mais</a>
+          </div>
+        </div>
+        <% } %>
+       </div>
+</div>
+
+<div class="card-header bg-danger">
+    <h3>Vestuário <i class="fa-solid fa-shirt"></i></h3>
+</div>
+<div class="card-body">
+    <div class="row">
+        <% for(let i = 0; i < 4; i++) { %> 
+        <div class="card" style="width: 13rem; margin: 30px;">
+          <img src="/images/undraw_code_thinking_re_gka2.svg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Vestuário</h5>
+            <p class="card-text">Este será a página que redireciona para vestuário
+            </p>
+            <a href="#" class="btn btn-primary">Ver mais</a>
+          </div>
+        </div>
+        <% } %>
+       </div>
+</div>
+
+<div class="card-header bg-success">
+    <h3>Games <i class="fa-solid fa-gamepad"></i></h3>
+</div>
+<div class="card-body">
+    <div class="row">
+        <% for(let i = 0; i < 4; i++) { %> 
+        <div class="card" style="width: 13rem; margin: 30px;">
+          <img src="/images/undraw_code_thinking_re_gka2.svg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Games</h5>
+            <p class="card-text">Este será a página que redireciona para Games
+            </p>
+            <a href="#" class="btn btn-primary">Ver mais</a>
+          </div>
+        </div>
+        <% } %>
+       </div>
+</div>
+
+
+</div>
+
+
+<%- include('./partials/footer') %> 

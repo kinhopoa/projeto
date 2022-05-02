@@ -1,0 +1,49 @@
+<%- include('./partials/head') %>
+
+<body>
+<%- include('./partials/navbar')  %> 
+<br>
+  <div class="container">
+    <div class="card-header bg-warning text-dark">
+      <h3>Bem vindo<i class="fa-solid fa-thumbs-up"></i></h3>
+    </div>
+
+    <div class="card-body">
+       <img src="/images/undraw_code_typing_re_p8b9.svg" height="200" width="400" class="rounded float-end" alt="...">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi totam commodi nemo corrupti, autem modi. Hic, quidem, provident dolor ipsam, facilis est debitis ad dignissimos architecto nesciunt aperiam. Quis, ea.
+      Expedita, dolorum possimus! Dolor ut neque dolorem tenetur vel necessitatibus expedita quae, nemo aut ipsum mollitia numquam exercitationem excepturi, consequuntur sequi deserunt dolore accusamus fuga magnam quas totam voluptatum a.
+      Explicabo quo enim architecto dignissimos quidem culpa magni, animi beatae alias voluptates iure, nemo dolorum mollitia at eum nisi! A rerum ratione soluta corrupti, pariatur facere incidunt aliquid nulla ad!
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facilis nihil sequi nostrum ratione a nam suscipit commodi, maiores voluptas ullam. Provident quaerat omnis nobis voluptates est asperiores reprehenderit nihil odit.
+      Tempore distinctio quis pariatur. Qui eaque illo deserunt, amet ipsam odit dolorem ratione magnam doloribus, rerum beatae, harum vero dolorum architecto incidunt! Repellat enim maiores architecto obcaecati recusandae consequuntur nostrum.
+      Amet, recusandae ducimus! Provident voluptatem quos consequuntur unde repellat quam quisquam ipsum voluptatum labore architecto ex deleniti est, vero omnis rerum reiciendis exercitationem necessitatibus iste ab aut iure veniam. Autem?</p>
+     
+    </div>
+
+    <br>
+
+    <div class="card-header bg-success">
+      <h3>Destaque do dia <i class="fa-solid fa-hand-holding-dollar"></i>:</h3>
+    </div>
+
+    <div class="card-body">
+      <div class="row">
+      <% for(let i = 0; i < 4; i++) { %> 
+      <div class="card" style="width: 13rem; margin: 30px;">
+        <img src="/images/undraw_code_thinking_re_gka2.svg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Promoção</h5>
+          <p class="card-text">Este será o bloco de promoção do item que está sendo
+            vendido
+          </p>
+          <a href="#" class="btn btn-primary">Ver mais</a>
+        </div>
+      </div>
+      <% } %>
+     </div>
+    </div>
+
+  </div>
+  
+
+
+<%- include('./partials/footer') %> 

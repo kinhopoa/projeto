@@ -1,0 +1,50 @@
+<%- include('./partials/head') %>
+
+<body>
+<%- include('./partials/navbar') %>
+<br>
+
+<div class="container">
+    <div class="card">
+    <div class="card-header bg-warning">
+        <h3>Login</h3>
+    </div>
+
+    <div class="card-body">
+        <div class="row">
+        <div class="col">
+            <img src="/images/undraw_code_typing_re_p8b9.svg" class="img-thumbnail" alt="...">
+        </div>
+        <div class="col">
+        <form action="/" method="post" enctype="multipart/form-data">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="" placeholder="Digite o seu email" class="form-control">
+
+            <br>
+
+            <label for="password">Senha:</label>
+            <input type="password" name="password" id="" placeholder="Digite a sua senha" class="form-control">
+
+            <br>
+
+            <a href="" class="btn btn-primary">Entrar</a>
+            <a href="#">Esqueceu a senha?</a>
+            <br>
+            <br>
+
+            <a href="#" class="nav-link"><i class="fa-brands fa-facebook" style="margin-right: 10px;"></i>Entrar com o facebook</a>
+            <a href="#" class="nav-link"><i class="fa-solid fa-envelope" style="margin-right: 10px;"></i>Entrar com o gmail</a>
+
+            <hr>
+            <br>
+
+            <a href="/cadastro" class="btn btn-success">Criar nova conta</a>
+        </form>
+    </div>
+    </div>
+    </div>
+</div>
+</div>
+
+
+<%- include('./partials/footer') %> 

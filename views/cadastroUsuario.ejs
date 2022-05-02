@@ -1,0 +1,37 @@
+<%- include('./partials/head') %>
+
+<body>
+<%- include('./partials/navbar') %>
+<br>
+
+<div class="container">
+    <div class="card">
+    <div class="card-header bg-warning">
+        <h3>Cadastro de Usuário<i class="fa-solid fa-file-waveform"></i></h3>
+    </div>
+
+    <div class="card-body">
+        <form action="/cadastro" method="post">
+            <label for="nome">Nome</label>
+            <input type="text" name="nome" id="" placeholder="Digite o seu nome completo" class="form-control">
+
+            <label for="email">Email</label>
+            <input type="email" name="email" id="" placeholder="Digite seu email" class="form-control">
+
+            <label for="senha">Senha</label>
+            <input type="password" name="senha" id="" placeholder="Digite uma senha" class="form-control">
+
+            <label for="data_nascimento">Data de nascimento</label>
+            <input type="date" name="ano_nascimento" id="" placehold="Seu ano de nascimento" class="form-control">
+
+            <br>
+
+            <button type="submit" class="btn btn-primary">Cadastrar</button>
+        </form>
+    </div>
+</div>
+
+</div>
+
+
+<%- include('./partials/footer') %> 
