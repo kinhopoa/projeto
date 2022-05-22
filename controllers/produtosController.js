@@ -1,5 +1,3 @@
-const { Produto } = require('../database/models')
-
 const ProdutosController = {
     index: (req, res) => {
         res.render('produtos')

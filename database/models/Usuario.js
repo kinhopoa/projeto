@@ -11,10 +11,14 @@ module.exports = (sequelize, DataType) => {
           type: DataType.STRING,
           allowNull: false
       },
+      senha: {
+        type: DataType.STRING,
+        allowNull: false
+      },
       ano_nascimento: {
           type: DataType.DATE,
           allowNull: false
-      }  
+      }, 
   },{
       tableName: 'usuarios',
       timestamps: false

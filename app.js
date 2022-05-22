@@ -4,14 +4,14 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
-const methodOverride = require('method-override')
+const methodOverride = require('method-override');
+const session = require('express-session');
 
 const indexRouter = require('./routes/index');
 const cadastroRouter = require('./routes/cadastro');
 const perfilRouter = require('./routes/perfil');
 const produtosRouter = require('./routes/produtos');
 const loginRouter = require('./routes/login');
-const adminRouter = require('./routes/admin');
 
 
 const app = express();
@@ -26,12 +26,19 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+//habilitando a sessão
+app.use(session({
+  secret: 'Nerd Geek House',
+  resave: false,
+  saveUninitialized: true
+}))
+
 app.use('/', indexRouter);
 app.use('/cadastro', cadastroRouter);
 app.use('/perfil', perfilRouter);
 app.use('/produtos', produtosRouter);
 app.use('/login', loginRouter);
-app.use('/admin', adminRouter);
+
 
 
 // catch 404 and forward to error handler

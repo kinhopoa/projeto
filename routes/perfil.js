@@ -1,10 +1,11 @@
 const express = require('express');
 const router = express.Router();
 const PerfilController = require('../controllers/PerfilController');
-const upload = require('../middlewares/multer');
+const auth = require('../middlewares/auth');
 
-router.get('/', upload.single('img-perfil'), PerfilController.index);
-router.post('/', upload.single('img-perfil'), PerfilController.index);
+
+router.get('/', auth, PerfilController.index);
+router.post('/', auth , PerfilController.index);
 
 
 module.exports = router;
