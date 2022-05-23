@@ -11,6 +11,14 @@
     </div>
 
     <div class="card-body">
+            <% if(typeOf(errors) != "undefined"){ %>
+              <p style = "color:red"> Erro: </p>
+              <ul>
+                <% errors.forEach((error)=> { %>
+                  <li style="color:red"> <%= error.msg %> </li>
+                  <% }) %>
+              </ul>
+              <% } %>
         <form action="/cadastro" method="post">
             <label for="nome">Nome</label>
             <input type="text" name="nome" id="" placeholder="Digite o seu nome completo" class="form-control">
