@@ -1,4 +1,5 @@
 const { Usuario } = require('../database/models');
+const { check, validationResult, body }= require('express-validator')
 const bcrypt = require('bcryptjs');
 
 const CadastroUsuario = {
@@ -8,13 +9,10 @@ const CadastroUsuario = {
         res.render('cadastroUsuario', { listarUsuarios} )
     },
     store: async (req, res) => {
+        let listaDeErrors = validationResult(req)
+        if (listaDeErrors.isEmpty()){
         const {nome, email, ano_nascimento, senha, confirmaSenha } = req.body;
         const senhaC = bcrypt.hashSync(senha, 10)
-
-        if (senha != confirmaSenha){
-            return res.render('cadastroUsuario', {erro: 'Senhas não coincidem'})
-        }
-
         //const emailJaExiste = Usuario.findOne({
         //  where:{email: email}
         //});
@@ -31,6 +29,8 @@ const CadastroUsuario = {
         })
         console.log(usuario)
         return res.render('cadastroUsuario')
+    } else {
+        return res.render('cadastroUsuario',{errors: listaDeErrors.errors})} 
     }
 
     
