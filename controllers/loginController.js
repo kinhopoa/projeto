@@ -10,16 +10,18 @@ const loginController = {
        const usuario = await Usuario.findOne({email:email})
 
        if(!usuario){
-        return res.render('login')
+        return res.render('login',{error: true})
     }
 
-    if(!bcrypt.compareSync(senha, usuario.senha)){
-        return res.render('login')
+    else if(!bcrypt.compareSync(senha, usuario.senha)){
+        return res.render('login',{error: true})
     }
-
+    else if(bcrypt.compareSync(senha, usuario.senha)){
        req.session.usuario = usuario;
-
-       res.redirect('perfil')
+        if (req.body.manterLogado == "ManterLogado"){
+            res.cookie('login',usuario,{maxAge:9999999999})
+        }
+       res.redirect('perfil')}
 }
 }
 

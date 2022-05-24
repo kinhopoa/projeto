@@ -16,6 +16,12 @@
             <img src="/images/undraw_code_typing_re_p8b9.svg" class="img-thumbnail" alt="...">
         </div>
         <div class="col">
+            <% if(error = true){ %>
+                <p style = "color:red"> Erro: </p>
+                <ul>
+                    <li style="color:red"> Usuário ou senha incorretos. </li>
+                </ul>
+                <% } %>
         <form action="/" method="post" enctype="multipart/form-data">
             <label for="email">Email</label>
             <input type="email" name="email" id="" placeholder="Digite o seu email" class="form-control">
@@ -26,8 +32,8 @@
             <input type="password" name="password" id="" placeholder="Digite a sua senha" class="form-control">
 
             <br>
-
-            <a href="" class="btn btn-primary">Entrar</a>
+            <input type="checkbox" id="manterLogado" name="manterLogado" value="manterLogado"><label for="manterLogado"> Manter logado? </label>
+            <button type="submit" class="btn btn-primary">Entrar</button>
             <a href="#">Esqueceu a senha?</a>
             <br>
             <br>

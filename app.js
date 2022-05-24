@@ -57,4 +57,12 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+  //cookie de login
+  app.use(function(req,res,next){
+    if(req.session.usuario == undefined && req.cookies.login != undefined){
+      req.session.usuario = req.cookies.login
+    }
+    next()
+  })
+
 module.exports = app;

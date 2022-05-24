@@ -1,6 +1,13 @@
+const session = require('express-session')
 const PerfilController = {
     index: (req, res) => {
-        res.render('perfilUsuario')
+        if (req.session.usuario != undefined){
+
+            res.render('perfilUsuario',{usuario:req.session.usuario})
+
+        } else {
+            res.redirect('login')
+        }
     }
 }
 
