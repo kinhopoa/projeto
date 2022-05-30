@@ -1,25 +1,26 @@
-const { check, validationResult, body } = import ('express-validator');
+const { check, body } = require('express-validator');
 
-const validateRegister = [
-    check()
-        .notEmpty().withMessage('Preencha todos os campos. ').bail(),
-    check('nome','username','name')  
-       // .notEmpty().withMessage('Deve Preencher o nome.').bail()
-        .isLenght({ min : 5}).withMessage('Nome precisa ter pelo menos 5 caracteres. ').bail()
-        .isLenght({ max : 20}).withMessage('Nome precisa ter no maximo 20 caracteres. ').bail(),
-    check('email','Email')
-       // .notEmpty().withMessage('Deve Preencher o email.').bail()
-        .isEmail().withMessage('Insira um email valido. '),
-    check('senha','password')
-       // .notEmpty().withMessage('Deve Preencher a senha.').bail()
-        .isLenght({ min : 6}).withMessage('Senha precisa ter pelo menos 6 caracteres. ').bail()
-        .isLenght({ max : 50}).withMessage('Senha precisa ter no maximo 50 caracteres. ').bail(),
-    check('confirm-senha','confirm-password','confirmarSenha')
-        .equals('senha','password').withMessage('Confirme sua senha. ').bail(),
-    check('data-de-nascimento','date','data','ano_nascimento')
-       // .notEmpty().withMessage('Insira uma data.').bail()
-        .isDate({format: 'DD/MM/YYYY'}).withMessage('Insira uma data valida.(exemplo:01/01/2000) ')
-    
+
+let validateRegister = [
+    check('email').isEmail().withMessage('Email inválido').bail()
+    .notEmpty().withMessage('Deve preencher o email').bail(),
+
+    check('senha').isLength({min: 7}).withMessage('A senha deve ser maior!').bail()
+    .notEmpty().withMessage('Deve preencher a senha').bail(),
+
+    check('nome').isLength({min:5}).withMessage('O nome deve ter no mínimo 5 caracteres').bail()
+    .notEmpty().withMessage('O nome não pode ficar vazio'),
+
+    check('ano_nascimento').isDate().withMessage('Data de nascimento inválida!')
+    .notEmpty().withMessage('A data não pode ficar vazia'),
+
+    /*body("email").custom((email) => {
+        let usuario = async (req, res) => {
+
+            return usuario.email != email
+        }
+    }).withMessage("O usuario já existe")
+*/
 ];
 
 module.exports = validateRegister;

@@ -5,13 +5,16 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const methodOverride = require('method-override');
-const session = require('express-session');
+var session = require('express-session');
+const cookieMiddleware = require('./middlewares/cookieLogin');
+
 
 const indexRouter = require('./routes/index');
 const cadastroRouter = require('./routes/cadastro');
 const perfilRouter = require('./routes/perfil');
 const produtosRouter = require('./routes/produtos');
 const loginRouter = require('./routes/login');
+const { cookie } = require('express/lib/response');
 
 
 const app = express();
@@ -20,18 +23,23 @@ const app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+
+//habilitando a sessão
+app.use(session({
+  secret: 'Nerd Geek House',
+  resave: true,
+  saveUninitialized: true
+}))
+
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(methodOverride('_method'))
+app.use(cookieMiddleware)
 
-//habilitando a sessão
-app.use(session({
-  secret: 'Nerd Geek House',
-  resave: false,
-  saveUninitialized: true
-}))
+
 
 app.use('/', indexRouter);
 app.use('/cadastro', cadastroRouter);
