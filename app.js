@@ -6,7 +6,7 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const methodOverride = require('method-override');
 var session = require('express-session');
-const cookieMiddleware = require('./middlewares/cookieLogin');
+
 
 
 const indexRouter = require('./routes/index');
@@ -14,7 +14,6 @@ const cadastroRouter = require('./routes/cadastro');
 const perfilRouter = require('./routes/perfil');
 const produtosRouter = require('./routes/produtos');
 const loginRouter = require('./routes/login');
-const { cookie } = require('express/lib/response');
 
 
 const app = express();
@@ -37,7 +36,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'))
-app.use(cookieMiddleware)
+
 
 
 

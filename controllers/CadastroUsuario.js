@@ -12,7 +12,7 @@ const CadastroUsuario = {
         let listaDeErrors = validationResult(req);
         if (listaDeErrors.isEmpty()){
         const {nome, email, ano_nascimento, senha} = req.body;
-        const senhaC = await bcrypt.hashSync(senha, 10)
+        const senhaC = bcrypt.hashSync(senha, 10)
 
         const usuario = await Usuario.create({
             nome,

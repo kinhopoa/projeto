@@ -16,7 +16,7 @@
             <img src="/images/undraw_code_typing_re_p8b9.svg" class="img-thumbnail" alt="...">
         </div>
         <div class="col">
-        <form action="/login" method="post" enctype="multipart/form-data">
+        <form action="/login" method="post">
             <label for="email">Email</label>
             <input type="email" name="email" id="" placeholder="Digite o seu email" class="form-control">
 
@@ -26,7 +26,8 @@
             <input type="password" name="senha" id="" placeholder="Digite a sua senha" class="form-control">
 
             <br>
-            <input type="checkbox" id="manterLogado" name="manterLogado" value="manterLogado"><label for="manterLogado"> Manter logado? </label>
+            <label for="manterLogado"> Manter logado? </label>
+            <input type="checkbox" id="manterLogado" name="manterLogado" value="manterLogado">
             <button type="submit" class="btn btn-primary">Entrar</button>
             <a href="#">Esqueceu a senha?</a>
             <br>
