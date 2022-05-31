@@ -17,7 +17,13 @@
         </li>
         
         <li class="nav-item">
-          <a class="nav-link" href="/login">Login</a>
+          <a class="nav-link" 
+            <% if (login == null){ %>
+              href="/login" > Login
+            <% } else { %>
+              href="/perfil" > <%= login %>
+              <% } %> 
+          </a>
         </li>
       </ul>
    

@@ -24,8 +24,6 @@ const CadastroUsuario = {
         return res.render('cadastroUsuario')
     } else {
         return res.render('cadastroUsuario', {errors: listaDeErrors.errors})
-
-     req.session.usuario = usuario;
     
     }
 
