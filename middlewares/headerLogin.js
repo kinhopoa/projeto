@@ -1,9 +1,9 @@
 function headerLogin (req,res,next) {
     let login = null
-    if(req.ression.usuario != undefined){
-        login = req.ression.usuario.nome
+    if(req.session.usuario != undefined){
+        login = req.session.usuario.nome
     }
-    res.locals({login:login})
+    res.locals.login = login;
     next()
 }
 
