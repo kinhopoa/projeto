@@ -1,68 +1,54 @@
 <%- include('./partials/head') %> 
-
 <body>
-<%- include('./partials/navbar') %> 
-<br>
+  <%- include('./partials/navbar') %> 
+  <br>
 <div class="container">
-<div class="card-header bg-warning">
-    <h3>Canecas <i class="fa-solid fa-mug-hot"></i></h3>
-</div>
-<div class="card-body">
-    <div class="row">
-        <% for(let i = 0; i < 4; i++) { %> 
-        <div class="card" style="width: 13rem; margin: 30px;">
-          <img src="/images/undraw_code_thinking_re_gka2.svg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Canecas</h5>
-            <p class="card-text">Este será a página que redireciona para canecas
-            </p>
-            <a href="#" class="btn btn-primary">Ver mais</a>
-          </div>
-        </div>
-        <% } %>
-       </div>
-</div>
+<div class="row">
+<div class="col">
+  <div class="card">
+  <div class="card-header">
+    <% product.forEach(product => { %>
+      <h3><%= product.nome %></h3>
+  </div>
 
-<div class="card-header bg-danger">
-    <h3>Vestuário <i class="fa-solid fa-shirt"></i></h3>
-</div>
-<div class="card-body">
-    <div class="row">
-        <% for(let i = 0; i < 4; i++) { %> 
-        <div class="card" style="width: 13rem; margin: 30px;">
-          <img src="/images/undraw_code_thinking_re_gka2.svg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Vestuário</h5>
-            <p class="card-text">Este será a página que redireciona para vestuário
-            </p>
-            <a href="#" class="btn btn-primary">Ver mais</a>
-          </div>
-        </div>
-        <% } %>
-       </div>
-</div>
+  <div class="card-body">
+    <img src="<%= product.picture %>" class="img-thumbnail" alt="...">
+    <h3>Descrição do produto: </h3>
+    <p><%= product.description %></p>
+  </div>
 
-<div class="card-header bg-success">
-    <h3>Games <i class="fa-solid fa-gamepad"></i></h3>
-</div>
-<div class="card-body">
-    <div class="row">
-        <% for(let i = 0; i < 4; i++) { %> 
-        <div class="card" style="width: 13rem; margin: 30px;">
-          <img src="/images/undraw_code_thinking_re_gka2.svg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Games</h5>
-            <p class="card-text">Este será a página que redireciona para Games
-            </p>
-            <a href="#" class="btn btn-primary">Ver mais</a>
-          </div>
-        </div>
-        <% } %>
-       </div>
-</div>
+  </div>
+  </div>
 
+  <div class="col">
+    <div class="card">
+      <div class="card-header">
+        <h3>Informações:</h3>
+      </div>
+    <div class="card-body">
+      <br>
+      <br>
 
-</div>
+      <h3>Preço: R$<%= product.price %>,00</h3>
+      <span>Em estoque</span>
+      <br>
+      <br>
+      <br>
 
+    
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+      <button class="btn btn-primary">Adicionar ao carrinho</button>
+      <% }) %>
+      </div>
+    </div>
+    </div>
+  </div>
+  </div>
 
-<%- include('./partials/footer') %> 
+  <br>
+  <hr>
+
+  </div>
+
+</body>
+  <%- include('./partials/footer') %> 

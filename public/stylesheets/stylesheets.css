@@ -7,3 +7,9 @@
 .destaque{
     margin: 35px
 }
+
+span {
+    background-color: greenyellow;
+    border-radius: 10px;
+    font-weight: bold;
+}

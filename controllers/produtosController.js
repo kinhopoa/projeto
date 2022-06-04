@@ -1,8 +1,20 @@
+const {Product} = require('../database/models')
+
 const ProdutosController = {
-    index: (req, res) => {
-        res.render('produtos')
+    index: async (req, res) => {
+    const produto = await Product.findAll();
+        res.render('index', {produto})
     },
-    canecas: (req, res) => {
+    produto: async (req, res) => {
+        const { id } = req.params;
+        const product = await Product.findAll({
+            where: {
+                id: id
+            }
+        })
+        res.render('produtos', {product})
+    },
+    canecas:(req, res) => {
         res.render('canecas')
     },
     vestuario: (req, res) => {
