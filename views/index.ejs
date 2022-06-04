@@ -21,7 +21,7 @@
 
     <br>
 <div class="card-header bg-warning">
-    <h3>Canecas <i class="fa-solid fa-mug-hot"></i></h3>
+    <a href="/produtos/canecas"><h3>Canecas <i class="fa-solid fa-mug-hot"></i></h3></a>
 </div>
 <div class="card-body">
       <div class="row">
@@ -30,11 +30,10 @@
           <img src="<%= produto.picture %>" style="height: 150px; width: 10rem">
           <div class="card-body">
             <h5 class="card-title"><%= produto.nome %></h5>
-            <p class="card-text"><%= produto.description %>
-            </p>
+            <p class="card-text">Caneca personalizada </p>
             <span>Valor: R$<%= produto.price %>,00</span>
             <br><br>
-            <a href="#" class="btn btn-primary">Ver mais</a>
+            <a href="/produtos/<%= produto.id %>" class="btn btn-primary">Ver mais</a>
           </div>
         </div>
         <% }) %>
@@ -42,7 +41,7 @@
 </div>
 
 <div class="card-header bg-danger">
-    <h3>Vestuário <i class="fa-solid fa-shirt"></i></h3>
+    <a href="/produtos/vestuario"><h3>Vestuário <i class="fa-solid fa-shirt"></i></h3></a>
 </div>
 <div class="card-body">
     <div class="row">
@@ -51,11 +50,10 @@
           <img src="<%= produto.picture %>" style="height: 150px; width: 10rem">
           <div class="card-body">
             <h5 class="card-title"><%= produto.nome %></h5>
-            <p class="card-text"><%= produto.description %>
-            </p>
+            <p class="card-text">vestimenta personalizadas</p>
             <span>Valor: R$<%= produto.price %>,00</span>
             <br><br>
-            <a href="#" class="btn btn-primary">Ver mais</a>
+            <a href="/produtos/<%= produto.id %>" class="btn btn-primary">Ver mais</a>
           </div>
         </div>
         <% }) %>
@@ -63,7 +61,7 @@
 </div>
 
 <div class="card-header bg-success">
-    <h3>Games <i class="fa-solid fa-gamepad"></i></h3>
+    <a href="/produtos/games"><h3>Games <i class="fa-solid fa-gamepad"></i></h3></a>
 </div>
 <div class="card-body">
   <div class="row">
@@ -72,11 +70,10 @@
       <img src="<%= produto.picture %>" style="height: 150px; width: 10rem">
       <div class="card-body">
         <h5 class="card-title"><%= produto.nome %></h5>
-        <p class="card-text"><%= produto.description %>
-        </p>
+        <p class="card-text"> </p>
         <span>Valor: R$<%= produto.price %>,00</span>
         <br><br>
-        <a href="<%= produto.id %>" class="btn btn-primary">Ver mais</a>
+        <a href="/produtos/<%= produto.id %>" class="btn btn-primary">Ver mais</a>
       </div>
     </div>
     <% }) %>

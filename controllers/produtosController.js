@@ -1,4 +1,6 @@
-const {Product} = require('../database/models')
+const {Product} = require('../database/models');
+const Sequelize = require('sequelize')
+const Op = Sequelize.Op;
 
 const ProdutosController = {
     index: async (req, res) => {
@@ -13,6 +15,18 @@ const ProdutosController = {
             }
         })
         res.render('produtos', {product})
+    },
+    search: async (req, res) => {
+       let { key } = req.query;
+       
+       let search = await Product.findOne({
+           where: {
+               nome: {
+                   [Op.like]: `%${key}%`
+               }
+           }
+       });
+       return res.render('index', {search})
     },
     canecas:(req, res) => {
         res.render('canecas')

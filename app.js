@@ -45,7 +45,7 @@ app.use(headerLogin)
 app.use('/', indexRouter);
 app.use('/cadastro', cadastroRouter);
 app.use('/perfil', perfilRouter);
-app.use('/produtos', produtosRouter);
+app.use('/', produtosRouter);
 app.use('/login', loginRouter);
 
 
