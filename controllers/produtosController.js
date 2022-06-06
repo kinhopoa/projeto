@@ -17,18 +17,19 @@ const ProdutosController = {
         res.render('produtos', {product})
     },
     search: async (req, res) => {
-       let { key } = req.query;
-       
-       let search = await Product.findOne({
-           where: {
-               nome: {
-                   [Op.like]: `%${key}%`
-               }
-           }
-       });
-       return res.render('index', {search})
-    },
-    canecas:(req, res) => {
+        let { key } = req.query;
+        const produto = await Product.findAll({
+            where: {
+                nome: {
+                    [Op.like]: `${key}`
+                }
+            }
+        });
+        return res.render('produtos', produto)
+        
+     },
+    canecas: async (req, res) => {
+
         res.render('canecas')
     },
     vestuario: (req, res) => {

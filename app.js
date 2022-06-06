@@ -13,8 +13,8 @@ const headerLogin = require('./middlewares/headerLogin')
 const indexRouter = require('./routes/index');
 const cadastroRouter = require('./routes/cadastro');
 const perfilRouter = require('./routes/perfil');
-const produtosRouter = require('./routes/produtos');
 const loginRouter = require('./routes/login');
+const produtosRouter = require('./routes/produtos')
 
 
 const app = express();
@@ -45,8 +45,8 @@ app.use(headerLogin)
 app.use('/', indexRouter);
 app.use('/cadastro', cadastroRouter);
 app.use('/perfil', perfilRouter);
-app.use('/', produtosRouter);
 app.use('/login', loginRouter);
+app.use('/produtos', produtosRouter)
 
 
 

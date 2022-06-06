@@ -8,10 +8,10 @@
       
     </div>
 
-        <form action="/produtos/search" class="d-flex" role="search" method="get">
-        <input class="form-control me-2" type="search" placeholder="Pesquise um produto" aria-label="Search" name="key">
-        <button class="btn btn-outline-primary" type="submit">Pesquisar</button>
-        </form>
+    <form action="/search" class="d-flex" role="search" method="get">
+      <input class="form-control me-2" type="search" placeholder="Pesquise um produto" aria-label="Search" name="key">
+      <button class="btn btn-outline-primary" type="submit">Pesquisar</button>
+      </form>
       
     <ul class="nav justify-content-end">
         <li class="nav-item">
@@ -27,10 +27,9 @@
               href="/login" > Login
             <% } else { %>
               href="/perfil" > <%= login %>
-              <% } %> 
+              <% } %>  
           </a>
         </li>
-
         
       </ul>
       

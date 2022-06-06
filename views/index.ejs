@@ -26,6 +26,7 @@
 <div class="card-body">
       <div class="row">
         <% produto.forEach(produto => {%>
+          <% if(produto.id == 1 || produto.id == 2 || produto.id == 10 || produto.id == 11){ %>
         <div class="card" style="width: 13rem; margin: 30px;">
           <img src="<%= produto.picture %>" style="height: 150px; width: 10rem">
           <div class="card-body">
@@ -36,7 +37,7 @@
             <a href="/produtos/<%= produto.id %>" class="btn btn-primary">Ver mais</a>
           </div>
         </div>
-        <% }) %>
+        <%} }) %>
        </div>
 </div>
 
@@ -46,6 +47,7 @@
 <div class="card-body">
     <div class="row">
         <% produto.forEach(produto => {%>
+          <% if(produto.id == 3 || produto.id == 4 || produto.id == 12 || produto.id == 13){ %>
         <div class="card" style="width: 13rem; margin: 30px;">
           <img src="<%= produto.picture %>" style="height: 150px; width: 10rem">
           <div class="card-body">
@@ -56,7 +58,7 @@
             <a href="/produtos/<%= produto.id %>" class="btn btn-primary">Ver mais</a>
           </div>
         </div>
-        <% }) %>
+        <% } }) %>
        </div>
 </div>
 
@@ -66,6 +68,7 @@
 <div class="card-body">
   <div class="row">
     <% produto.forEach(produto => {%>
+      <% if(produto.id == 5 || produto.id == 6 || produto.id == 7 || produto.id == 8 || produto.id == 9){ %>
     <div class="card" style="width: 13rem; margin: 30px;">
       <img src="<%= produto.picture %>" style="height: 150px; width: 10rem">
       <div class="card-body">
@@ -76,7 +79,7 @@
         <a href="/produtos/<%= produto.id %>" class="btn btn-primary">Ver mais</a>
       </div>
     </div>
-    <% }) %>
+    <% } }) %>
    </div>
        </div>
 </div>
