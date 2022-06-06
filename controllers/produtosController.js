@@ -21,16 +21,16 @@ const ProdutosController = {
         const produto = await Product.findAll({
             where: {
                 nome: {
-                    [Op.like]: `${key}`
+                    [Op.like]: `%${key}%`
                 }
             }
         });
-        return res.render('produtos', produto)
+        return res.render('index', {produto})
         
      },
     canecas: async (req, res) => {
-
-        res.render('canecas')
+            const caneca = await Product.findAll();
+                res.render('canecas', {caneca})
     },
     vestuario: (req, res) => {
         res.render('vestuario')

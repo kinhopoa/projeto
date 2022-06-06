@@ -4,7 +4,7 @@ const ProdutosController = require('../controllers/produtosController');
 
 
 router.get('/:id', ProdutosController.produto);
-router.get('/canecas/:id?', ProdutosController.canecas);
+router.get('/canecas', ProdutosController.canecas);
 router.get('/vestuario', ProdutosController.vestuario);
 router.get('/vestuario/camisas/:id?', ProdutosController.camisas);
 router.get('/vestuario/moletons/:id?', ProdutosController.moletons);

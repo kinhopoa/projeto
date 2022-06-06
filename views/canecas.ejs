@@ -11,17 +11,18 @@
     <div class="card-body">
         <div class="card-body">
             <div class="row">
-                <% for(let i = 0; i < 12; i++) { %> 
-                <div class="card" style="width: 13rem; margin: 5px 25px 15px 25px;">
-                  <img src="/images/undraw_code_thinking_re_gka2.svg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Vestuário</h5>
-                    <p class="card-text">Exemplo de caneca
-                    </p>
-                    <a href="#" class="btn btn-primary">Comprar</a>
-                  </div>
+              <% caneca.forEach(canecas => { %>
+              <div class="card" style="width: 13rem; margin: 30px;">
+                <img src="<%= canecas.picture %>" style="height: 150px; width: 10rem">
+                <div class="card-body">
+                  <h5 class="card-title"><%= canecas.nome %></h5>
+                  <p class="card-text">Caneca personalizada </p>
+                  <span>Valor: R$<%= canecas.price %>,00</span>
+                  <br><br>
+                  <a href="/canecass/<%= canecas.id %>" class="btn btn-primary">Ver mais</a>
                 </div>
-                <% } %>
+              </div>
+              <%}) %>
                </div>
         </div>
     </div>

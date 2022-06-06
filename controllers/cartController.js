@@ -1,4 +1,4 @@
-const { Cart, CartItem, Product, Usuario } = require('../database/models');
+const {Cart, CartItem, Product, Usuario} = require('../database/models');
 
 exports.renderCart = async (req, res) => {
   const cart = await Cart.findOne({ 
